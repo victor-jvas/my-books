@@ -6,6 +6,8 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using my_books.Context;
+using my_books.Data;
+using my_books.Services;
 
 namespace my_books
 {
@@ -25,7 +27,13 @@ namespace my_books
         {
 
             services.AddControllers();
+            
+            //Configure DBContext with SQL -> AppDbContext is the Context class created
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(ConnectionString));
+
+            //Add Book service responsible for doing things like adding, updating and deleting books
+            services.AddTransient<BookService>();
+            
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "my_books", Version = "v1" });
@@ -52,6 +60,8 @@ namespace my_books
             {
                 endpoints.MapControllers();
             });
+            
+            AppDbInitializer.Seed(app);
         }
     }
 }
