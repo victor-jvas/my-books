@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using my_books.Data.Models.Entities;
 
 namespace my_books.Models
 {
@@ -14,5 +16,11 @@ namespace my_books.Models
         public int? Rate { get; set; }
         public string CoverUrl { get; set; }
         public DateTime DateAdded { get; set; }
+
+        //Navigation Properties
+        public int PublisherId { get; set; }
+        public Publisher Publisher { get; set; }
+
+        public List<BookAuthor> BookAuthors { get; set; }
     }
 }

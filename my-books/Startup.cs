@@ -33,6 +33,8 @@ namespace my_books
 
             //Add Book service responsible for doing things like adding, updating and deleting books
             services.AddTransient<BookService>();
+            services.AddTransient<PublisherService>();
+            services.AddTransient<AuthorService>();
             
             services.AddSwaggerGen(c =>
             {
@@ -61,7 +63,7 @@ namespace my_books
                 endpoints.MapControllers();
             });
             
-            AppDbInitializer.Seed(app);
+            //AppDbInitializer.Seed(app);
         }
     }
 }
