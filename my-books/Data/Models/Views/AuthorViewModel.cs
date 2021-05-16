@@ -10,4 +10,10 @@ namespace my_books.Data.Models.Views
     {
         public string Fullname { get; set; }
     }
+
+    public class AuthorWithBooksViewModel
+    {
+        public string Fullname { get; set; }
+        public List<string> BookTitles { get; set; }
+    }
 }

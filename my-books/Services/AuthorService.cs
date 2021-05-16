@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Formatters;
 using my_books.Context;
 using my_books.Data.Models.Entities;
 using my_books.Data.Models.Views;
@@ -31,7 +32,17 @@ namespace my_books.Services
 
         public List<Author> GetAuthors() => _context.Authors.ToList();
 
-        public Author GetAuthorById(int id) => _context.Authors.Find(id);
+        public AuthorWithBooksViewModel GetAuthorById(int id)
+        {
+            var authorWithBooks = _context.Authors.Where(n => n.Id == id).Select(author =>
+                new AuthorWithBooksViewModel()
+                {
+                    Fullname = author.Fullname,
+                    BookTitles = author.BookAuthors.Select(n => n.Book.Title).ToList()
+                }).FirstOrDefault();
+            
+            return authorWithBooks;
+        }
 
         public Author UpdateAuthor(int id, [FromBody] AuthorViewModel newAuthor)
         {

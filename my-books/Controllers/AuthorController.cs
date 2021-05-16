@@ -28,7 +28,7 @@ namespace my_books.Controllers
         }
 
         [HttpGet("{id:int}")]
-        public IActionResult getAuthorById(int id)
+        public IActionResult GetAuthorById(int id)
         {
             var author = _authorService.GetAuthorById(id);
             return Ok(author);

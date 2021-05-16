@@ -18,7 +18,7 @@ namespace my_books.Services
             _context = context;
         }
 
-        public void AddBook(BookVM book)
+        public void AddBook(BookViewModel book)
         {
             var _book = new Book()
             {
@@ -35,6 +35,8 @@ namespace my_books.Services
 
             _context.Books.Add(_book);
             _context.SaveChanges();
+            
+            
 
             foreach (var id in book.AuthorsIds)
             {
@@ -50,9 +52,24 @@ namespace my_books.Services
 
         public List<Book> GetBooks() => _context.Books.ToList();
 
-        public Book GetBookById(int id) => _context.Books.FirstOrDefault(book => id == book.Id);
+        public BookWithAuthorViewModel GetBookById(int id)
+        {
+            var bookWithAuthors = _context.Books.Where(n => n.Id == id).Select(book => new BookWithAuthorViewModel()
+            {
+                Title = book.Title,
+                CoverUrl = book.CoverUrl,
+                Description = book.Description,
+                Genre = book.Genre,
+                IsRead = book.IsRead,
+                DateRead = book.IsRead ? book.DateRead : null,
+                Rate = book.IsRead ? book.Rate : null,
+                PublisherName = book.Publisher.Name,
+                AuthorsNames = book.BookAuthors.Select(n => n.Author.Fullname).ToList()
+            }).FirstOrDefault();
+            return bookWithAuthors;
+        }
 
-        public Book UpdateBookById(int id, BookVM book)
+        public Book UpdateBookById(int id, BookViewModel book)
         {
             var oldBook = _context.Books.FirstOrDefault(b => b.Id == id);
 

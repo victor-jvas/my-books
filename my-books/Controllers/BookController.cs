@@ -18,7 +18,7 @@ namespace my_books.Controllers
 
 
         [HttpPost]
-        public IActionResult AddBook([FromBody]BookVM book)
+        public IActionResult AddBook([FromBody]BookViewModel book)
         {
             _bookService.AddBook(book);
             return Ok();
@@ -39,7 +39,7 @@ namespace my_books.Controllers
         }
 
         [HttpPut("{id:int}")]
-        public IActionResult UpdateBookById(int id, [FromBody] BookVM book)
+        public IActionResult UpdateBookById(int id, [FromBody] BookViewModel book)
         {
             var updatedBook = _bookService.UpdateBookById(id, book);
             return Ok(updatedBook);

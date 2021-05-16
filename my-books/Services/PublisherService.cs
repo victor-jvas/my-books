@@ -34,7 +34,21 @@ namespace my_books.Services
 
         public List<Publisher> GetPublishers() => _context.Publishers.ToList();
 
-        public Publisher GetPublisherById(int id) => _context.Publishers.Find(id);
+        public PublisherAllInfoViewModel GetPublisherById(int id)
+        {
+            var publisherData = _context.Publishers.Where(n => n.Id == id)
+                .Select(n => new PublisherAllInfoViewModel()
+            {
+                Name = n.Name,
+                BookAuthors = n.Books.Select(n => new BookAuthorViewModel()
+                {
+                    BookName = n.Title,
+                    BookAuthors = n.BookAuthors.Select(n => n.Author.Fullname).ToList()
+                }).ToList()
+            }).FirstOrDefault();
+
+            return publisherData;
+        }
 
         public Publisher UpdatePublisher(int id, [FromBody] PublisherViewModel newPublisher)
         {
