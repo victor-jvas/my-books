@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using my_books.Context;
+using my_books.Data.Models.Entities;
+using my_books.Data.Models.Views;
 using my_books.Models;
 using my_books.Models.View;
 
@@ -23,7 +23,6 @@ namespace my_books.Services
             var _book = new Book()
             {
                 Title = book.Title,
-                Author = book.Author,
                 CoverUrl = book.CoverUrl,
                 Description = book.Description,
                 Genre = book.Genre,
@@ -31,10 +30,22 @@ namespace my_books.Services
                 DateRead = book.IsRead? book.DateRead:null,
                 Rate = book.IsRead? book.Rate:null,
                 DateAdded = DateTime.Today,
+                PublisherId = book.PublisherId,
             };
 
             _context.Books.Add(_book);
             _context.SaveChanges();
+
+            foreach (var id in book.AuthorsIds)
+            {
+                var bookAuthor = new BookAuthor()
+                {
+                    BookId = _book.Id,
+                    AuthorId = id
+                };
+                _context.BookAuthors.Add(bookAuthor);
+                _context.SaveChanges();
+            }
         }
 
         public List<Book> GetBooks() => _context.Books.ToList();
@@ -48,7 +59,6 @@ namespace my_books.Services
             if (oldBook == null) return null;
 
             oldBook.Title = book.Title;
-            oldBook.Author = book.Author;
             oldBook.CoverUrl = book.CoverUrl;
             oldBook.Description = book.Description;
             oldBook.Genre = book.Genre;

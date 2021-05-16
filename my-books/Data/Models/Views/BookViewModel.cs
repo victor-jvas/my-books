@@ -1,10 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
-namespace my_books.Models.View
+namespace my_books.Data.Models.Views
 {
     // ReSharper disable once InconsistentNaming
     public class BookVM
@@ -12,10 +9,13 @@ namespace my_books.Models.View
         public string Title { get; set; }
         public string Description { get; set; }
         public string Genre { get; set; }
-        public string Author { get; set; }
         public bool IsRead { get; set; }
         public DateTime? DateRead { get; set; }
         public int? Rate { get; set; }
         public string CoverUrl { get; set; }
+
+        //Navigation properties
+        public int PublisherId { get; set; }
+        public List<int> AuthorsIds { get; set; }
     }
 }

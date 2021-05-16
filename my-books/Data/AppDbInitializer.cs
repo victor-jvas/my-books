@@ -21,7 +21,6 @@ namespace my_books.Data
                     {
                         Title = "The Little Prince",
                         Description = "A amazing book about loneliness, friendship, love and loss",
-                        Author = "Antoine de Saint-Exupery",
                         CoverUrl = "Https:Cover",
                         DateAdded = DateTime.Now,
                         DateRead = DateTime.Now.AddDays(-10),
@@ -33,7 +32,6 @@ namespace my_books.Data
                     {
                         Title = "The Prince",
                         Description = "A book about ruling",
-                        Author = "Maquiavel",
                         CoverUrl = "Https:Cover_prince",
                         DateAdded = DateTime.Now,
                         Genre = "History, Real-Life, Self Development",

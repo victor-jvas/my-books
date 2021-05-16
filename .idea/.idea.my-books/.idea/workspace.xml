@@ -5,10 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="019a5a6e-f0db-4442-b290-27331af186a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/my-books/Controllers/BooksController.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Startup.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/my-books.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/my-books.csproj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Migrations/20210516025659_BookAuthorRefactored.Designer.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Migrations/20210516025659_BookAuthorRefactored.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/dataSources/1377ff73-d4d0-4c36-9947-0e5bf6f796e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/dataSources/1377ff73-d4d0-4c36-9947-0e5bf6f796e1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/BookService.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -17,6 +23,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/my-books/Controllers/BooksController.cs" root0="SKIP_HIGHLIGHTING" />
@@ -27,8 +41,11 @@
       <option value="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" />
       <option value="$PROJECT_DIR$/my-books/appsettings.json" />
       <option value="$PROJECT_DIR$/my-books/Startup.cs" />
-      <option value="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" />
       <option value="$PROJECT_DIR$/my-books/Controllers/BooksController.cs" />
+      <option value="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" />
+      <option value="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" />
+      <option value="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" />
+      <option value="$PROJECT_DIR$/my-books/Services/BookService.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sYBJ8j0cDyBrwnbfwIStjLLVR4" />
@@ -98,6 +115,7 @@
       <workItem from="1621085627253" duration="2236000" />
       <workItem from="1621089386070" duration="4000" />
       <workItem from="1621090305492" duration="805000" />
+      <workItem from="1621118806127" duration="1065000" />
     </task>
     <task id="LOCAL-00001" summary="Db Migration">
       <created>1621046311043</created>
