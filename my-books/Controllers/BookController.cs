@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using my_books.Data.Models.Views;
-using my_books.Models.View;
 using my_books.Services;
 
 namespace my_books.Controllers
@@ -21,7 +20,7 @@ namespace my_books.Controllers
         public IActionResult AddBook([FromBody]BookViewModel book)
         {
             _bookService.AddBook(book);
-            return Ok();
+            return Created(nameof(book), book);
         }
 
         [HttpGet]
@@ -35,6 +34,11 @@ namespace my_books.Controllers
         public IActionResult GetBookById(int id)
         {
             var book = _bookService.GetBookById(id);
+
+            if (book == null)
+            {
+                return NotFound();
+            }
             return Ok(book);
         }
 

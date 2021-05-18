@@ -5,16 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="019a5a6e-f0db-4442-b290-27331af186a4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/my-books/Data/Models/Views/ErrorViewMode.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/ExceptionMiddlewareExtensions.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/PublisherNameException.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/BookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/AuthorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/Models/Views/AuthorViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Services/AuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/AuthorService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/BookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Services/PublisherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/PublisherService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +49,22 @@
       <option value="$PROJECT_DIR$/my-books/Models/Book.cs" />
       <option value="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" />
       <option value="$PROJECT_DIR$/my-books/appsettings.json" />
-      <option value="$PROJECT_DIR$/my-books/Startup.cs" />
       <option value="$PROJECT_DIR$/my-books/Controllers/BooksController.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" />
       <option value="$PROJECT_DIR$/my-books/Services/BookService.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Views/AuthorViewModel.cs" />
+      <option value="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" />
+      <option value="$PROJECT_DIR$/my-books/Controllers/BookController.cs" />
       <option value="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" />
       <option value="$PROJECT_DIR$/my-books/Services/AuthorService.cs" />
-      <option value="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" />
+      <option value="$PROJECT_DIR$/my-books/Exceptions/PublisherNameException.cs" />
+      <option value="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" />
+      <option value="$PROJECT_DIR$/my-books/Data/Models/Views/ErrorViewMode.cs" />
+      <option value="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" />
+      <option value="$PROJECT_DIR$/my-books/Exceptions/ExceptionMiddlewareExtensions.cs" />
+      <option value="$PROJECT_DIR$/my-books/Startup.cs" />
       <option value="$PROJECT_DIR$/my-books/Services/PublisherService.cs" />
     </changedPaths>
   </component>
@@ -129,7 +138,8 @@
       <workItem from="1621089386070" duration="4000" />
       <workItem from="1621090305492" duration="805000" />
       <workItem from="1621118806127" duration="1217000" />
-      <workItem from="1621174178924" duration="6178000" />
+      <workItem from="1621174178924" duration="7472000" />
+      <workItem from="1621293792942" duration="2743000" />
     </task>
     <task id="LOCAL-00001" summary="Db Migration">
       <created>1621046311043</created>
@@ -145,7 +155,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621134226429</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Returning full info from publishers, authors and books">
+      <created>1621209551261</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1621209551261</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -169,6 +186,7 @@
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
     <MESSAGE value="Db Migration" />
     <MESSAGE value="Refactored book author" />
-    <option name="LAST_COMMIT_MESSAGE" value="Refactored book author" />
+    <MESSAGE value="Returning full info from publishers, authors and books" />
+    <option name="LAST_COMMIT_MESSAGE" value="Returning full info from publishers, authors and books" />
   </component>
 </project>

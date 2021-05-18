@@ -7,6 +7,7 @@ using Microsoft.OpenApi.Models;
 using Microsoft.EntityFrameworkCore;
 using my_books.Context;
 using my_books.Data;
+using my_books.Exceptions;
 using my_books.Services;
 
 namespace my_books
@@ -57,6 +58,8 @@ namespace my_books
             app.UseRouting();
 
             app.UseAuthorization();
+            
+            app.ConfigureCustomExceptionHandler();
 
             app.UseEndpoints(endpoints =>
             {

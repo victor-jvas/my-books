@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using my_books.Models.View;
+﻿using System;
+using Microsoft.AspNetCore.Mvc;
+using my_books.Data.Models.Views;
+using my_books.Exceptions;
 using my_books.Services;
 
 namespace my_books.Controllers
@@ -27,14 +29,32 @@ namespace my_books.Controllers
         public IActionResult GetPublisherById(int id)
         {
             var publisher = _publisherService.GetPublisherById(id);
+            if (publisher == null)
+            {
+                return NotFound();
+            }
             return Ok(publisher);
         }
 
         [HttpPost]
         public IActionResult AddPublisher([FromBody]PublisherViewModel publisher)
         {
-            _publisherService.AddPublisher(publisher);
-            return Ok();
+            try
+            {
+
+                _publisherService.AddPublisher(publisher);
+                return Created(nameof(publisher), publisher);
+            }
+            catch (PublisherNameException exception)
+            {
+                return BadRequest($"{exception.Message}, Publisher name: {exception.PublisherName}");
+            }
+            
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;  
+            }
         }
 
         [HttpPut]

@@ -1,11 +1,11 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using my_books.Context;
 using my_books.Data.Models.Entities;
 using my_books.Data.Models.Views;
-using my_books.Models.View;
 
 namespace my_books.Services
 {
@@ -61,7 +61,7 @@ namespace my_books.Services
         {
             var author = _context.Authors.Find(id);
 
-            if(author == null) return;
+            if(author == null) throw new Exception($"Author with id: {id} not found.");
 
             _context.Authors.Remove(author);
             _context.SaveChanges();

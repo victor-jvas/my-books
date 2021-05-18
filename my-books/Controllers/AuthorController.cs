@@ -31,6 +31,10 @@ namespace my_books.Controllers
         public IActionResult GetAuthorById(int id)
         {
             var author = _authorService.GetAuthorById(id);
+            if (author == null)
+            {
+                return NotFound();
+            }
             return Ok(author);
         }
 
@@ -38,7 +42,7 @@ namespace my_books.Controllers
         public IActionResult AddAuthor([FromBody] AuthorViewModel author)
         {
             _authorService.AddAuthor(author);
-            return Ok();
+            return Created(nameof(author), author);
         }
 
         [HttpPut("{id:int}")]
@@ -51,8 +55,15 @@ namespace my_books.Controllers
         [HttpDelete("{id:int}")]
         public IActionResult DeleteAuthor(int id)
         {
-            _authorService.DeleteAuthorById(id);
-            return Ok();
+            try
+            {
+                _authorService.DeleteAuthorById(id);
+                return Ok();
+            }
+            catch (Exception exception)
+            {
+                return BadRequest(exception.Message);
+            }
         }
 
     }

@@ -5,7 +5,6 @@ using my_books.Context;
 using my_books.Data.Models.Entities;
 using my_books.Data.Models.Views;
 using my_books.Models;
-using my_books.Models.View;
 
 namespace my_books.Services
 {
