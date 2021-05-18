@@ -4,20 +4,12 @@
     <projectFile>my-books/my-books.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="019a5a6e-f0db-4442-b290-27331af186a4" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/my-books/Data/Models/Views/ErrorViewMode.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/ExceptionMiddlewareExtensions.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/PublisherNameException.cs" afterDir="false" />
+    <list default="true" id="019a5a6e-f0db-4442-b290-27331af186a4" name="Default Changelist" comment="Middleware Custom Exception Handler added">
+      <change afterPath="$PROJECT_DIR$/my-books/Data/PaginatedList.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/BookController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Services/AuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/AuthorService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/BookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Properties/launchSettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Services/PublisherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/PublisherService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Startup.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,11 +52,13 @@
       <option value="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" />
       <option value="$PROJECT_DIR$/my-books/Services/AuthorService.cs" />
       <option value="$PROJECT_DIR$/my-books/Exceptions/PublisherNameException.cs" />
-      <option value="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Views/ErrorViewMode.cs" />
       <option value="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" />
       <option value="$PROJECT_DIR$/my-books/Exceptions/ExceptionMiddlewareExtensions.cs" />
       <option value="$PROJECT_DIR$/my-books/Startup.cs" />
+      <option value="$PROJECT_DIR$/my-books/Properties/launchSettings.json" />
+      <option value="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" />
+      <option value="$PROJECT_DIR$/my-books/Data/PaginatedList.cs" />
       <option value="$PROJECT_DIR$/my-books/Services/PublisherService.cs" />
     </changedPaths>
   </component>
@@ -86,7 +80,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="RiderIisExpressOptionsPageId" />
     <property name="vue.rearranger.settings.migration" value="true" />
   </component>
   <component name="ReaderModeSettings">
@@ -100,8 +94,9 @@
       <option name="USE_EXTERNAL_CONSOLE" value="0" />
       <option name="USE_MONO" value="0" />
       <option name="RUNTIME_ARGUMENTS" value="" />
+      <browser name="b2a9dca7-9d0b-4e1e-98a8-afb19c1328d2" />
       <option name="GENERATE_APPLICATIONHOST_CONFIG" value="1" />
-      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="0" />
+      <option name="SHOW_IIS_EXPRESS_OUTPUT" value="1" />
       <option name="SEND_DEBUG_REQUEST" value="1" />
       <option name="ADDITIONAL_IIS_EXPRESS_ARGUMENTS" value="" />
       <method v="2">
@@ -123,6 +118,10 @@
         <option name="Build" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue=".NET Launch Settings Profile.my-books: IIS Express" />
+      <item itemvalue=".NET Launch Settings Profile.my-books: my_books" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -139,7 +138,7 @@
       <workItem from="1621090305492" duration="805000" />
       <workItem from="1621118806127" duration="1217000" />
       <workItem from="1621174178924" duration="7472000" />
-      <workItem from="1621293792942" duration="2743000" />
+      <workItem from="1621293792942" duration="5706000" />
     </task>
     <task id="LOCAL-00001" summary="Db Migration">
       <created>1621046311043</created>
@@ -162,7 +161,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621209551261</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Middleware Custom Exception Handler added">
+      <created>1621297408032</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1621297408033</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -187,6 +193,7 @@
     <MESSAGE value="Db Migration" />
     <MESSAGE value="Refactored book author" />
     <MESSAGE value="Returning full info from publishers, authors and books" />
-    <option name="LAST_COMMIT_MESSAGE" value="Returning full info from publishers, authors and books" />
+    <MESSAGE value="Middleware Custom Exception Handler added" />
+    <option name="LAST_COMMIT_MESSAGE" value="Middleware Custom Exception Handler added" />
   </component>
 </project>

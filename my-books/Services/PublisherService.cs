@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using my_books.Context;
+using my_books.Data;
 using my_books.Data.Models.Views;
 using my_books.Exceptions;
 using my_books.Models;
@@ -42,7 +43,32 @@ namespace my_books.Services
 
         }
 
-        public List<Publisher> GetPublishers() => _context.Publishers.ToList();
+        public List<Publisher> GetPublishers(string sortBy, string searchString, int? pageNumber)
+        {
+            var allPublishers = _context.Publishers.OrderBy(n=>n.Name).ToList();
+
+            if (!string.IsNullOrEmpty(sortBy))
+            {
+                switch (sortBy)
+                {
+                    case "name_desc":
+                        allPublishers = allPublishers.OrderByDescending(n => n.Name).ToList();
+                        break;
+                    default:
+                        break;
+                }
+            }
+
+            if (!string.IsNullOrEmpty(searchString))
+            {
+                allPublishers = allPublishers.Where(n => n.Name.Contains(searchString, StringComparison.CurrentCultureIgnoreCase)).ToList();
+            }
+
+            const int pageSize = 3;
+            allPublishers = PaginatedList<Publisher>.Create(allPublishers.AsQueryable(), pageNumber ?? 1, pageSize);
+
+            return allPublishers;
+        }
 
         public PublisherAllInfoViewModel GetPublisherById(int id)
         {

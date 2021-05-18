@@ -18,9 +18,9 @@ namespace my_books.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPublishers()
+        public IActionResult GetPublishers(string sortBy, string searchString, int pageNumber)
         {
-            var publishers = _publisherService.GetPublishers();
+            var publishers = _publisherService.GetPublishers(sortBy, searchString, pageNumber);
             return Ok(publishers);
         }
 
