@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace my_books.Data.Models.Views
+namespace my_books.Models.ViewModel
 {
     public class ErrorViewMode
     {

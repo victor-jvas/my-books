@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using my_books.Models;
+﻿using System.Collections.Generic;
 
-namespace my_books.Data.Models.Entities
+namespace my_books.Models.InputModel
 {
     public class Author
     {

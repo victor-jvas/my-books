@@ -9,9 +9,10 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Mvc;
 using my_books.Context;
 using my_books.Data;
-using my_books.Data.Models.Views;
 using my_books.Exceptions;
 using my_books.Models;
+using my_books.Models.InputModel;
+using my_books.Models.ViewModel;
 
 namespace my_books.Services
 {

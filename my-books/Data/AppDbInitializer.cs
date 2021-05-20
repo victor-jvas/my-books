@@ -3,7 +3,9 @@ using System.Linq;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using my_books.Context;
+using my_books.Entities;
 using my_books.Models;
+using my_books.Models.InputModel;
 
 namespace my_books.Data
 {
@@ -21,7 +23,6 @@ namespace my_books.Data
                     {
                         Title = "The Little Prince",
                         Description = "A amazing book about loneliness, friendship, love and loss",
-                        CoverUrl = "Https:Cover",
                         DateAdded = DateTime.Now,
                         DateRead = DateTime.Now.AddDays(-10),
                         Genre = "Children Literature, Drama",
@@ -32,7 +33,6 @@ namespace my_books.Data
                     {
                         Title = "The Prince",
                         Description = "A book about ruling",
-                        CoverUrl = "Https:Cover_prince",
                         DateAdded = DateTime.Now,
                         Genre = "History, Real-Life, Self Development",
                     });

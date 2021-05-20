@@ -4,18 +4,18 @@ using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Formatters;
 using my_books.Context;
-using my_books.Data.Models.Entities;
-using my_books.Data.Models.Views;
+using my_books.Models.InputModel;
+using my_books.Models.ViewModel;
 
 namespace my_books.Services
 {
     public class AuthorService
     {
-        private AppDbContext _context { get; set; }
+        private AppDbContext Context { get; set; }
 
         public AuthorService(AppDbContext context)
         {
-            _context = context;
+            Context = context;
         }
 
         public void AddAuthor([FromBody]AuthorViewModel newAuthor)
@@ -25,16 +25,16 @@ namespace my_books.Services
                 Fullname = newAuthor.Fullname
             };
 
-            _context.Authors.Add(author);
-            _context.SaveChanges();
+            Context.Authors.Add(author);
+            Context.SaveChanges();
 
         }
 
-        public List<Author> GetAuthors() => _context.Authors.ToList();
+        public List<Author> GetAuthors() => Context.Authors.ToList();
 
         public AuthorWithBooksViewModel GetAuthorById(int id)
         {
-            var authorWithBooks = _context.Authors.Where(n => n.Id == id).Select(author =>
+            var authorWithBooks = Context.Authors.Where(n => n.Id == id).Select(author =>
                 new AuthorWithBooksViewModel()
                 {
                     Fullname = author.Fullname,
@@ -46,25 +46,25 @@ namespace my_books.Services
 
         public Author UpdateAuthor(int id, [FromBody] AuthorViewModel newAuthor)
         {
-            var author = _context.Authors.Find(id);
+            var author = Context.Authors.Find(id);
 
             if (author == null) return null;
 
             author.Fullname = newAuthor.Fullname;
 
-            _context.SaveChanges();
+            Context.SaveChanges();
 
             return author;
         }
 
         public void DeleteAuthorById(int id)
         {
-            var author = _context.Authors.Find(id);
+            var author = Context.Authors.Find(id);
 
             if(author == null) throw new Exception($"Author with id: {id} not found.");
 
-            _context.Authors.Remove(author);
-            _context.SaveChanges();
+            Context.Authors.Remove(author);
+            Context.SaveChanges();
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
+using my_books.Entities;
 
-namespace my_books.Models
+namespace my_books.Models.InputModel
 {
     public class Publisher
     {

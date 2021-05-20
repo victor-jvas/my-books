@@ -2,7 +2,7 @@
 using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
-using my_books.Data.Models.Views;
+using my_books.Models.ViewModel;
 
 namespace my_books.Exceptions
 {

@@ -1,6 +1,6 @@
-﻿using my_books.Models;
+﻿using my_books.Entities;
 
-namespace my_books.Data.Models.Entities
+namespace my_books.Models.InputModel
 {
     public class BookAuthor
     {

@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace my_books.Data.Models.Views
+namespace my_books.Models.ViewModel
 {
     public class PublisherViewModel
     {

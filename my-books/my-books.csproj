@@ -19,6 +19,16 @@
     <Compile Remove="WeatherForecast.cs" />
     <Compile Remove="Controllers\WeatherForecastController.cs" />
     <Compile Remove="Controllers\BooksController.cs" />
+    <Compile Remove="Services\PublisherService.cs" />
+    <Compile Remove="Controllers\V1\PublisherController.cs" />
+    <Compile Remove="Services\AuthorService.cs" />
+    <Compile Remove="Controllers\V1\AuthorController.cs" />
+    <Compile Remove="Exceptions\CustomExceptionMiddleWare.cs" />
+    <Compile Remove="Exceptions\ExceptionMiddlewareExtensions.cs" />
+    <Compile Remove="Exceptions\PublisherNameException.cs" />
+    <Compile Remove="Models\InputModel\Book_Author.cs" />
+    <Compile Remove="Models\InputModel\Author.cs" />
+    <Compile Remove="Models\InputModel\Publisher.cs" />
   </ItemGroup>
 
 </Project>

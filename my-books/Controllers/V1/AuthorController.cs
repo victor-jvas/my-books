@@ -1,15 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using my_books.Data.Models.Views;
+using my_books.Models.ViewModel;
 using my_books.Services;
 
-namespace my_books.Controllers
+namespace my_books.Controllers.V1
 {
-    [Route("api/authors")]
+    [Route("api/v1/[controller]")]
     [ApiController]
     public class AuthorController : Controller
     {

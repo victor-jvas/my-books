@@ -4,12 +4,32 @@
     <projectFile>my-books/my-books.csproj</projectFile>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="019a5a6e-f0db-4442-b290-27331af186a4" name="Default Changelist" comment="Middleware Custom Exception Handler added">
-      <change afterPath="$PROJECT_DIR$/my-books/Data/PaginatedList.cs" afterDir="false" />
+    <list default="true" id="019a5a6e-f0db-4442-b290-27331af186a4" name="Default Changelist" comment="Async version">
+      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/BookAlreadyExistException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/BookNotRegisteredException.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Middleware/ExceptionMiddleware.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Models/InputModel/BookInputModel.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/my-books/Services/IBookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Properties/launchSettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Properties/launchSettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/V1/AuthorController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/V1/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/V1/PublisherController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/InputModel/Author.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Entities/Book.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Book_Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/InputModel/Book_Author.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Publisher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/InputModel/Publisher.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/AuthorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/ViewModel/AuthorViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/ViewModel/BookViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/ErrorViewMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/ViewModel/ErrorViewMode.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/ViewModel/PublisherViewModel.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Services/AuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/AuthorService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/BookService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Services/PublisherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/PublisherService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/my-books.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/my-books.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -29,37 +49,58 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/B538A170-1CD3-4843-86B8-076E88796BC8/1/SwaggerUIMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/my-books/Services/AuthorService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/58FA5950-4046-4398-ABC0-A5E416EBC5D0/1A/EndpointRoutingMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A9771B1B-9028-4496-853F-BBE4CEDF5E2A/3/SwaggerMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/A343CE2F-B3DC-4EF4-AD52-3FAD4F95D26C/5/HttpsRedirectionMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/CDE98BB5-6DE1-427C-92D1-EF98BE8481E9/A/UseMiddlewareExtensions.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/my-books/Services/PublisherService.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/my-books/Controllers/BooksController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4B496ED1-4CBC-43BF-9B27-37B24C493967/13/StaticFileMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/my-books/Controllers/V1/AuthorController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/my-books/Models/Book.cs" />
-      <option value="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" />
       <option value="$PROJECT_DIR$/my-books/appsettings.json" />
       <option value="$PROJECT_DIR$/my-books/Controllers/BooksController.cs" />
-      <option value="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" />
-      <option value="$PROJECT_DIR$/my-books/Services/BookService.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Views/AuthorViewModel.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" />
       <option value="$PROJECT_DIR$/my-books/Controllers/BookController.cs" />
       <option value="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" />
-      <option value="$PROJECT_DIR$/my-books/Services/AuthorService.cs" />
       <option value="$PROJECT_DIR$/my-books/Exceptions/PublisherNameException.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Views/ErrorViewMode.cs" />
       <option value="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" />
       <option value="$PROJECT_DIR$/my-books/Exceptions/ExceptionMiddlewareExtensions.cs" />
-      <option value="$PROJECT_DIR$/my-books/Startup.cs" />
       <option value="$PROJECT_DIR$/my-books/Properties/launchSettings.json" />
       <option value="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" />
-      <option value="$PROJECT_DIR$/my-books/Data/PaginatedList.cs" />
       <option value="$PROJECT_DIR$/my-books/Services/PublisherService.cs" />
+      <option value="$PROJECT_DIR$/my-books/Controllers/V1/AuthorController.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/InputModel/Author.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/InputModel/Book.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/InputModel/Book_Author.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/InputModel/Publisher.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/ViewModel/ErrorViewMode.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/ViewModel/PublisherViewModel.cs" />
+      <option value="$PROJECT_DIR$/my-books/Controllers/V1/PublisherController.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/ViewModel/AuthorViewModel.cs" />
+      <option value="$PROJECT_DIR$/my-books/Services/AuthorService.cs" />
+      <option value="$PROJECT_DIR$/my-books/Exceptions/BookNotRegisteredException.cs" />
+      <option value="$PROJECT_DIR$/my-books/Exceptions/BookAlreadyRegisteredException.cs" />
+      <option value="$PROJECT_DIR$/my-books/Exceptions/BookAlreadyExistException.cs" />
+      <option value="$PROJECT_DIR$/my-books/Entities/Book.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/InputModel/BookInputModel.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/ViewModel/BookViewModel.cs" />
+      <option value="$PROJECT_DIR$/my-books/Data/PaginatedList.cs" />
+      <option value="$PROJECT_DIR$/my-books/Services/IBookService.cs" />
+      <option value="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" />
+      <option value="$PROJECT_DIR$/my-books/Controllers/V1/BookController.cs" />
+      <option value="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" />
+      <option value="$PROJECT_DIR$/my-books/Middleware/ExceptionMiddleware.cs" />
+      <option value="$PROJECT_DIR$/my-books/Startup.cs" />
+      <option value="$PROJECT_DIR$/my-books/Services/BookService.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sYBJ8j0cDyBrwnbfwIStjLLVR4" />
@@ -138,7 +179,9 @@
       <workItem from="1621090305492" duration="805000" />
       <workItem from="1621118806127" duration="1217000" />
       <workItem from="1621174178924" duration="7472000" />
-      <workItem from="1621293792942" duration="5706000" />
+      <workItem from="1621293792942" duration="6412000" />
+      <workItem from="1621330463756" duration="5934000" />
+      <workItem from="1621464409428" duration="6875000" />
     </task>
     <task id="LOCAL-00001" summary="Db Migration">
       <created>1621046311043</created>
@@ -168,7 +211,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621297408033</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Filtering, Sorting and Pagination added">
+      <created>1621301939866</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1621301939866</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -194,6 +244,8 @@
     <MESSAGE value="Refactored book author" />
     <MESSAGE value="Returning full info from publishers, authors and books" />
     <MESSAGE value="Middleware Custom Exception Handler added" />
-    <option name="LAST_COMMIT_MESSAGE" value="Middleware Custom Exception Handler added" />
+    <MESSAGE value="Filtering, Sorting and Pagination added" />
+    <MESSAGE value="Async version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Async version" />
   </component>
 </project>

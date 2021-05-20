@@ -1,14 +1,18 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using my_books.Context;
-using my_books.Data.Models.Entities;
-using my_books.Data.Models.Views;
+using my_books.Data;
+using my_books.Entities;
+using my_books.Exceptions;
 using my_books.Models;
+using my_books.Models.InputModel;
+using my_books.Models.ViewModel;
 
 namespace my_books.Services
 {
-    public class BookService
+    public class BookService : IBookService
     {
         private readonly AppDbContext _context;
 
@@ -17,85 +21,122 @@ namespace my_books.Services
             _context = context;
         }
 
-        public void AddBook(BookViewModel book)
+        public async Task<BookViewModel> AddBook(BookInputModel bookInputModel)
         {
-            var _book = new Book()
+            var checkBook = _context.Books.FirstOrDefault(b => b.Title == bookInputModel.Title && b.Publisher == bookInputModel.Publisher);
+
+            if (checkBook == null) throw new BookAlreadyExistException();
+
+            var book = new Book()
             {
-                Title = book.Title,
-                CoverUrl = book.CoverUrl,
-                Description = book.Description,
-                Genre = book.Genre,
-                IsRead = book.IsRead,
-                DateRead = book.IsRead? book.DateRead:null,
-                Rate = book.IsRead? book.Rate:null,
+                Title = bookInputModel.Title,
+                Description = bookInputModel.Description,
+                Genre = bookInputModel.Genre,
+                Author = bookInputModel.Author,
+                Publisher = bookInputModel.Publisher,
+                IsRead = bookInputModel.IsRead,
+                DateRead = bookInputModel.IsRead? bookInputModel.DateRead:null,
+                Rate = bookInputModel.IsRead? bookInputModel.Rate:null,
                 DateAdded = DateTime.Today,
-                PublisherId = book.PublisherId,
             };
 
-            _context.Books.Add(_book);
-            _context.SaveChanges();
-            
-            
+            _context.Books.Add(book);
+            await _context.SaveChangesAsync();
 
-            foreach (var id in book.AuthorsIds)
+            var bookViewModel = new BookViewModel()
             {
-                var bookAuthor = new BookAuthor()
-                {
-                    BookId = _book.Id,
-                    AuthorId = id
-                };
-                _context.BookAuthors.Add(bookAuthor);
-                _context.SaveChanges();
-            }
-        }
-
-        public List<Book> GetBooks() => _context.Books.ToList();
-
-        public BookWithAuthorViewModel GetBookById(int id)
-        {
-            var bookWithAuthors = _context.Books.Where(n => n.Id == id).Select(book => new BookWithAuthorViewModel()
-            {
+                Id = book.Id,
                 Title = book.Title,
-                CoverUrl = book.CoverUrl,
                 Description = book.Description,
                 Genre = book.Genre,
+                Author = book.Author,
+                Publisher = book.Publisher,
                 IsRead = book.IsRead,
                 DateRead = book.IsRead ? book.DateRead : null,
                 Rate = book.IsRead ? book.Rate : null,
-                PublisherName = book.Publisher.Name,
-                AuthorsNames = book.BookAuthors.Select(n => n.Author.Fullname).ToList()
-            }).FirstOrDefault();
-            return bookWithAuthors;
+                DateAdded = book.DateAdded,
+            };
+
+            return bookViewModel;
         }
 
-        public Book UpdateBookById(int id, BookViewModel book)
+        public async Task<List<BookViewModel>> GetBooks(int page, int perPage)
+        {
+            var books = _context.Books.ToList();
+
+            var pageBook = PaginatedList<Book>.Create(books.AsQueryable(), page, perPage);
+            
+            return pageBook.Select(book => new BookViewModel
+            {
+                Id = book.Id,
+                Title = book.Title,
+                Description = book.Description,
+                Genre = book.Genre,
+                Author = book.Author,
+                IsRead = book.IsRead,
+                DateAdded = book.DateAdded,
+                DateRead = book.DateRead,
+                Publisher = book.Publisher,
+                Rate = book.Rate
+            })
+                .ToList();
+        }
+
+        public async Task<BookViewModel> GetBookById(int id)
+        {
+            var book = _context.Books.FirstOrDefault(b => b.Id == id);
+
+            if (book == null) return null;
+
+            var bookViewModel = new BookViewModel()
+            {
+                Id = book.Id,
+                Title = book.Title,
+                Description = book.Description,
+                Genre = book.Genre,
+                Author = book.Author,
+                IsRead = book.IsRead,
+                DateAdded = book.DateAdded,
+                DateRead = book.DateRead,
+                Publisher = book.Publisher,
+                Rate = book.Rate
+            };
+            
+            return bookViewModel;
+        }
+
+        public async Task UpdateBookById(int id, BookInputModel book)
         {
             var oldBook = _context.Books.FirstOrDefault(b => b.Id == id);
 
-            if (oldBook == null) return null;
+            if (oldBook == null) throw new BookNotRegisteredException();
 
             oldBook.Title = book.Title;
-            oldBook.CoverUrl = book.CoverUrl;
             oldBook.Description = book.Description;
             oldBook.Genre = book.Genre;
+            oldBook.Author = book.Author;
+            oldBook.Publisher = book.Publisher;
             oldBook.IsRead = book.IsRead;
             oldBook.DateRead = book.IsRead? book.DateRead:null;
             oldBook.Rate = book.IsRead? book.Rate:null;
 
-            _context.SaveChanges();
-
-            return oldBook;
+            await _context.SaveChangesAsync();
 
         }
 
-        public void DeleteBookById(int id)
+        public async Task DeleteBookById(int id)
         {
-            var book = _context.Books.Find(id);
-            if (book == null) return;
+            var book = await _context.Books.FindAsync(id);
+            if (book == null) throw new BookNotRegisteredException();
             
             _context.Books.Remove(book);
-            _context.SaveChanges();
+            await _context.SaveChangesAsync();
 
+        }
+
+        public void Dispose()
+        {
+            //throw new NotImplementedException();
         }
     }
 }

@@ -1,12 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using my_books.Data.Models.Views;
 using my_books.Exceptions;
+using my_books.Models;
+using my_books.Models.InputModel;
+using my_books.Models.ViewModel;
 using my_books.Services;
 
-namespace my_books.Controllers
+namespace my_books.Controllers.V1
 {
-    [Route("api/publishers")]
+    [Route("api/v2/[controller]")]
     [ApiController]
     public class PublisherController : Controller
     {
@@ -18,7 +22,7 @@ namespace my_books.Controllers
         }
 
         [HttpGet]
-        public IActionResult GetPublishers(string sortBy, string searchString, int pageNumber)
+        public async Task<ActionResult<List<Publisher>>> GetPublishers(string sortBy, string searchString, int pageNumber)
         {
             var publishers = _publisherService.GetPublishers(sortBy, searchString, pageNumber);
             return Ok(publishers);
