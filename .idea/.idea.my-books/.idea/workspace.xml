@@ -5,30 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="019a5a6e-f0db-4442-b290-27331af186a4" name="Default Changelist" comment="Async version">
-      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/BookAlreadyExistException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-books/Exceptions/BookNotRegisteredException.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-books/Middleware/ExceptionMiddleware.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-books/Models/InputModel/BookInputModel.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/my-books/Services/IBookService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/dataSources/1377ff73-d4d0-4c36-9947-0e5bf6f796e1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/dataSources/1377ff73-d4d0-4c36-9947-0e5bf6f796e1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.my-books/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Controllers/AuthorController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/V1/AuthorController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Controllers/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/V1/BookController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Controllers/PublisherController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/V1/PublisherController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/InputModel/Author.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Entities/Book.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Book_Author.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/InputModel/Book_Author.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Entities/Publisher.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/InputModel/Publisher.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/AuthorViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/ViewModel/AuthorViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/ViewModel/BookViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/ErrorViewMode.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/ViewModel/ErrorViewMode.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Data/Models/Views/PublisherViewModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/ViewModel/PublisherViewModel.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Exceptions/CustomExceptionMiddleWare.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Services/AuthorService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/AuthorService.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Controllers/V1/BookController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Controllers/V1/BookController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Migrations/AppDbContextModelSnapshot.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Migrations/AppDbContextModelSnapshot.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/Models/InputModel/BookInputModel.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Models/InputModel/BookInputModel.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Services/BookService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/BookService.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/my-books/Services/PublisherService.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Services/PublisherService.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/Startup.cs" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/Startup.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/my-books/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/appsettings.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/my-books/my-books.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/my-books/my-books.csproj" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -58,11 +44,11 @@
     <setting file="file://$PROJECT_DIR$/my-books/Controllers/BooksController.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/4B496ED1-4CBC-43BF-9B27-37B24C493967/13/StaticFileMiddleware.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/my-books/Controllers/V1/AuthorController.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/my-books/Migrations/20210520015523_Remake2.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/my-books/Models/Book.cs" />
-      <option value="$PROJECT_DIR$/my-books/appsettings.json" />
       <option value="$PROJECT_DIR$/my-books/Controllers/BooksController.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Entities/Book.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/Models/Views/BookViewModel.cs" />
@@ -91,16 +77,17 @@
       <option value="$PROJECT_DIR$/my-books/Exceptions/BookAlreadyRegisteredException.cs" />
       <option value="$PROJECT_DIR$/my-books/Exceptions/BookAlreadyExistException.cs" />
       <option value="$PROJECT_DIR$/my-books/Entities/Book.cs" />
-      <option value="$PROJECT_DIR$/my-books/Models/InputModel/BookInputModel.cs" />
       <option value="$PROJECT_DIR$/my-books/Models/ViewModel/BookViewModel.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/PaginatedList.cs" />
       <option value="$PROJECT_DIR$/my-books/Services/IBookService.cs" />
       <option value="$PROJECT_DIR$/my-books/Data/AppDbInitializer.cs" />
-      <option value="$PROJECT_DIR$/my-books/Controllers/V1/BookController.cs" />
       <option value="$PROJECT_DIR$/my-books/Context/AppDbContext.cs" />
       <option value="$PROJECT_DIR$/my-books/Middleware/ExceptionMiddleware.cs" />
+      <option value="$PROJECT_DIR$/my-books/appsettings.json" />
       <option value="$PROJECT_DIR$/my-books/Startup.cs" />
+      <option value="$PROJECT_DIR$/my-books/Models/InputModel/BookInputModel.cs" />
       <option value="$PROJECT_DIR$/my-books/Services/BookService.cs" />
+      <option value="$PROJECT_DIR$/my-books/Controllers/V1/BookController.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1sYBJ8j0cDyBrwnbfwIStjLLVR4" />
@@ -181,7 +168,7 @@
       <workItem from="1621174178924" duration="7472000" />
       <workItem from="1621293792942" duration="6412000" />
       <workItem from="1621330463756" duration="5934000" />
-      <workItem from="1621464409428" duration="6875000" />
+      <workItem from="1621464409428" duration="8761000" />
     </task>
     <task id="LOCAL-00001" summary="Db Migration">
       <created>1621046311043</created>
@@ -218,7 +205,14 @@
       <option name="project" value="LOCAL" />
       <updated>1621301939866</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Async version">
+      <created>1621475478477</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1621475478477</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

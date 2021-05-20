@@ -6,7 +6,6 @@ using my_books.Context;
 using my_books.Data;
 using my_books.Entities;
 using my_books.Exceptions;
-using my_books.Models;
 using my_books.Models.InputModel;
 using my_books.Models.ViewModel;
 
@@ -25,7 +24,7 @@ namespace my_books.Services
         {
             var checkBook = _context.Books.FirstOrDefault(b => b.Title == bookInputModel.Title && b.Publisher == bookInputModel.Publisher);
 
-            if (checkBook == null) throw new BookAlreadyExistException();
+            if (checkBook != null) throw new BookAlreadyExistException();
 
             var book = new Book()
             {

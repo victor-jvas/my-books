@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="dataSourceStorageLocal" created-in="RD-211.7142.19">
-    <data-source name="my-books@DESKTOP-3B14NSU" uuid="1377ff73-d4d0-4c36-9947-0e5bf6f796e1">
+    <data-source name="@DESKTOP-3B14NSU" uuid="1377ff73-d4d0-4c36-9947-0e5bf6f796e1">
       <database-info product="Microsoft SQL Server" version="15.00.2000" jdbc-version="4.2" driver-name="Microsoft JDBC Driver 9.2 for SQL Server" driver-version="9.2.0.0" dbms="MSSQL" exact-version="15.0.2000" exact-driver-version="9.2">
         <extra-name-characters>$#@</extra-name-characters>
         <identifier-quote-string>&quot;</identifier-quote-string>
@@ -11,7 +11,7 @@
       <auth-provider>ms-sso</auth-provider>
       <schema-mapping>
         <introspection-scope>
-          <node kind="database" qname="my-books">
+          <node kind="database" qname="Dio-books-api">
             <node kind="schema" qname="@" />
           </node>
         </introspection-scope>
